@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previews & Staging | CyberSlayerCorpz</title>
+
+    <!-- Favicon from root site -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 500 500%22><rect width=%22500%22 height=%22500%22 rx=%22100%22 fill=%22%2318181B%22/><g stroke-width=%2216%22 stroke-linecap=%22square%22><polygon points=%22250,110 360,180 360,320 250,390 140,320 140,180%22 stroke=%22%23FFFFFF%22/><path d=%22M 250 110 V 250 M 360 180 L 250 250 M 140 180 L 250 250%22 stroke=%22%23A1A1AA%22 stroke-width=%2210%22/></g></svg>">
+
+    <!-- Clean modern sans typography (Plus Jakarta Sans) - zero monospace / cyberpunk fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        base: '#09090b',
+                        surface: '#121215',
+                        card: '#16161a',
+                        border: '#27272a',
+                        muted: '#a1a1aa',
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #09090b;
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #09090b; }
+        ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 9999px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+        .glass-header {
+            background: rgba(9, 9, 11, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-white selection:text-black">
+
+    <!-- Top Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-header">
+        <div class="max-w-6xl mx-auto px-6 h-18 py-4 flex items-center justify-between">
+            <a href="https://cyberslayercorpz.dev" class="flex items-center gap-3">
+                <svg class="w-7 h-7" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="500" height="500" rx="100" fill="#18181B"/>
+                    <g stroke-width="16" stroke-linecap="square">
+                        <polygon points="250,110 360,180 360,320 250,390 140,320 140,180" stroke="#FFFFFF"/>
+                        <path d="M 250 110 V 250 M 360 180 L 250 250 M 140 180 L 250 250" stroke="#A1A1AA" stroke-width="10"/>
+                    </g>
+                </svg>
+                <div class="flex items-center gap-2">
+                    <span class="font-bold text-base tracking-tight text-white">CyberSlayerCorpz</span>
+                    <span class="text-[11px] font-semibold text-zinc-400 bg-zinc-800/80 border border-zinc-700/60 px-2 py-0.5 rounded-full">Demos</span>
+                </div>
+            </a>
+
+            <div class="flex items-center gap-5">
+                <a href="https://cyberslayercorpz.dev" class="text-sm font-medium text-muted hover:text-white transition flex items-center gap-2">
+                    <i class="fa-solid fa-arrow-left text-xs"></i> Back to Main Site
+                </a>
+                <a href="https://instagram.com/cyberslayercorpz" target="_blank" class="hidden sm:inline-flex text-xs font-semibold bg-white text-black px-4 py-2 rounded-xl hover:bg-zinc-200 transition">
+                    Instagram
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-6xl mx-auto px-6 pt-32 pb-20 w-full">
+        
+        <!-- Header -->
+        <header class="mb-12">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-800 bg-surface text-xs font-medium text-muted mb-5">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Live Client Directory
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-3">
+                Website Previews & Builds
+            </h1>
+            <p class="text-muted text-base sm:text-lg max-w-2xl leading-relaxed">
+                Direct preview links for client sites, prototypes, and web apps built by CyberSlayerCorpz.
+            </p>
+
+            <!-- Search and Filter -->
+            <div class="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="relative w-full sm:w-80">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-zinc-500 text-xs"></i>
+                    <input type="text" id="demoSearch" placeholder="Search previews..." 
+                           class="w-full bg-surface border border-border text-white text-xs pl-9 pr-4 py-2.5 rounded-xl outline-none focus:border-zinc-500 transition placeholder:text-zinc-500">
+                </div>
+
+                <div class="flex items-center gap-2 w-full sm:w-auto overflow-x-auto pb-1 sm:pb-0">
+                    <button onclick="filterCategory('all')" class="cat-pill active text-xs font-medium px-3.5 py-1.5 rounded-lg border border-white bg-white text-black transition">All</button>
+                    <button onclick="filterCategory('client')" class="cat-pill text-xs font-medium px-3.5 py-1.5 rounded-lg border border-border bg-surface text-muted hover:text-white transition">Client Sites</button>
+                    <button onclick="filterCategory('product')" class="cat-pill text-xs font-medium px-3.5 py-1.5 rounded-lg border border-border bg-surface text-muted hover:text-white transition">Apps & Projects</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Preview Grid -->
+        <div id="demoGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Card 1: Jailani Catering -->
+            <div class="demo-card bg-surface border border-border hover:border-zinc-500 rounded-2xl p-6 flex flex-col justify-between transition duration-200 group" data-category="client" data-name="jailani catering woraiyur trichy food">
+                <div>
+                    <div class="flex items-center justify-between mb-5">
+                        <span class="text-xs font-medium text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-md">Live Preview</span>
+                        <span class="text-xs text-zinc-500">Trichy</span>
+                    </div>
+                    <h2 class="text-xl font-bold text-white mb-2 group-hover:text-zinc-100">Jailani Catering</h2>
+                    <p class="text-muted text-xs leading-relaxed mb-6">
+                        Complete mobile catering menu with an interactive per-plate price calculator and direct WhatsApp booking.
+                    </p>
+                </div>
+                <div class="pt-5 border-t border-border flex items-center justify-between">
+                    <a href="/jailani-catering" class="inline-flex items-center gap-2 bg-white text-black font-semibold text-xs px-4 py-2 rounded-lg hover:bg-zinc-200 transition">
+                        Open Preview <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
+                    <span class="text-xs text-zinc-500">/jailani-catering</span>
+                </div>
+            </div>
+
+            <!-- Card 2: ShareShed -->
+            <div class="demo-card bg-surface border border-border hover:border-zinc-500 rounded-2xl p-6 flex flex-col justify-between transition duration-200 group" data-category="product" data-name="shareshed tool sharing community pwa">
+                <div>
+                    <div class="flex items-center justify-between mb-5">
+                        <span class="text-xs font-medium text-zinc-300 bg-zinc-800 border border-zinc-700 px-2.5 py-1 rounded-md">Web App</span>
+                        <span class="text-xs text-zinc-500">Production</span>
+                    </div>
+                    <h2 class="text-xl font-bold text-white mb-2 group-hover:text-zinc-100">ShareShed</h2>
+                    <p class="text-muted text-xs leading-relaxed mb-6">
+                        Local community platform designed for lending and borrowing tools with verified deposit security.
+                    </p>
+                </div>
+                <div class="pt-5 border-t border-border flex items-center justify-between">
+                    <a href="https://shareshed-bice.vercel.app" target="_blank" class="inline-flex items-center gap-2 border border-zinc-700 bg-card text-white font-medium text-xs px-4 py-2 rounded-lg hover:bg-zinc-800 transition">
+                        Visit Site <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
+                    <span class="text-xs text-zinc-500">shareshed-bice.vercel.app</span>
+                </div>
+            </div>
+
+            <!-- Card 3: AssetSlayer -->
+            <div class="demo-card bg-surface border border-border hover:border-zinc-500 rounded-2xl p-6 flex flex-col justify-between transition duration-200 group" data-category="product" data-name="assetslayer image file optimization utility">
+                <div>
+                    <div class="flex items-center justify-between mb-5">
+                        <span class="text-xs font-medium text-zinc-300 bg-zinc-800 border border-zinc-700 px-2.5 py-1 rounded-md">Browser Utility</span>
+                        <span class="text-xs text-zinc-500">Live Tool</span>
+                    </div>
+                    <h2 class="text-xl font-bold text-white mb-2 group-hover:text-zinc-100">AssetSlayer</h2>
+                    <p class="text-muted text-xs leading-relaxed mb-6">
+                        In-browser image compressor and converter with side-by-side quality comparison and no server uploads.
+                    </p>
+                </div>
+                <div class="pt-5 border-t border-border flex items-center justify-between">
+                    <a href="https://tanzeemrockz.github.io/assetslayer" target="_blank" class="inline-flex items-center gap-2 border border-zinc-700 bg-card text-white font-medium text-xs px-4 py-2 rounded-lg hover:bg-zinc-800 transition">
+                        Launch Tool <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
+                    <span class="text-xs text-zinc-500">github.io/assetslayer</span>
+                </div>
+            </div>
+
+            <!-- Card 4: CyberDrive -->
+            <div class="demo-card bg-surface border border-border hover:border-zinc-500 rounded-2xl p-6 flex flex-col justify-between transition duration-200 group" data-category="product" data-name="cyberdrive arcade canvas game synthwave">
+                <div>
+                    <div class="flex items-center justify-between mb-5">
+                        <span class="text-xs font-medium text-zinc-300 bg-zinc-800 border border-zinc-700 px-2.5 py-1 rounded-md">Web Project</span>
+                        <span class="text-xs text-zinc-500">HTML5 Canvas</span>
+                    </div>
+                    <h2 class="text-xl font-bold text-white mb-2 group-hover:text-zinc-100">CyberDrive</h2>
+                    <p class="text-muted text-xs leading-relaxed mb-6">
+                        Retro-style browser arcade game featuring procedural tracks, traffic simulation, and custom audio effects.
+                    </p>
+                </div>
+                <div class="pt-5 border-t border-border flex items-center justify-between">
+                    <a href="https://cyberdrive.vercel.app" target="_blank" class="inline-flex items-center gap-2 border border-zinc-700 bg-card text-white font-medium text-xs px-4 py-2 rounded-lg hover:bg-zinc-800 transition">
+                        Play Demo <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
+                    <span class="text-xs text-zinc-500">cyberdrive.vercel.app</span>
+                </div>
+            </div>
+
+            <!-- Card 5: Sample Clinic & Practice Template -->
+            <div class="demo-card bg-surface border border-border hover:border-zinc-500 rounded-2xl p-6 flex flex-col justify-between transition duration-200 group opacity-75" data-category="client" data-name="clinic dental health doctor template">
+                <div>
+                    <div class="flex items-center justify-between mb-5">
+                        <span class="text-xs font-medium text-zinc-400 bg-zinc-800 border border-zinc-700 px-2.5 py-1 rounded-md">Client Template</span>
+                        <span class="text-xs text-zinc-500">Healthcare</span>
+                    </div>
+                    <h2 class="text-xl font-bold text-white mb-2">Clinic & Appointment Page</h2>
+                    <p class="text-muted text-xs leading-relaxed mb-6">
+                        Single-page layout template with doctor schedules, location directions, and one-tap WhatsApp bookings.
+                    </p>
+                </div>
+                <div class="pt-5 border-t border-border flex items-center justify-between">
+                    <a href="https://cyberslayercorpz.dev" class="text-xs text-zinc-400 hover:text-white transition flex items-center gap-1.5">
+                        Inquire at Studio <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                    <span class="text-xs text-zinc-600">cyberslayercorpz.dev</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Studio Redirect Box -->
+        <section class="mt-14 p-6 sm:p-8 border border-border bg-surface rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div>
+                <h3 class="text-lg font-bold text-white mb-1">CyberSlayerCorpz Studio</h3>
+                <p class="text-sm text-muted">For software services, studio details, and direct contact, visit the primary site.</p>
+            </div>
+            <a href="https://cyberslayercorpz.dev" class="shrink-0 bg-white text-black font-semibold text-xs px-5 py-2.5 rounded-xl hover:bg-zinc-200 transition">
+                Go to Main Site <i class="fa-solid fa-arrow-right ml-1"></i>
+            </a>
+        </section>
+
+    </main>
+
+    <!-- Clean Minimal Footer -->
+    <footer class="mt-auto border-t border-border bg-base py-10 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6">
+            <div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+                <a href="https://cyberslayercorpz.dev" class="font-bold text-sm text-white hover:text-zinc-300 transition">
+                    CyberSlayerCorpz
+                </a>
+                <span class="hidden sm:inline text-zinc-600">|</span>
+                <p class="text-xs text-zinc-500">
+                    © 2026 CyberSlayerCorpz. Built by <a href="https://github.com/tanzeemrockz" target="_blank" class="text-zinc-300 hover:underline">tanzeemrockz</a>.
+                </p>
+            </div>
+
+            <div class="flex items-center gap-6 text-xs text-zinc-400">
+                <a href="https://cyberslayercorpz.dev" class="hover:text-white transition">Main Site</a>
+                <a href="https://github.com/tanzeemrockz" target="_blank" class="hover:text-white transition">GitHub</a>
+                <a href="https://instagram.com/cyberslayercorpz" target="_blank" class="hover:text-white transition">Instagram</a>
+                <a href="mailto:contact@cyberslayercorpz.dev" class="hover:text-white transition">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Filter Script -->
+    <script>
+        let currentCategory = 'all';
+        const searchInput = document.getElementById('demoSearch');
+        const cards = document.querySelectorAll('.demo-card');
+
+        function applyFilters() {
+            const query = searchInput.value.toLowerCase().trim();
+
+            cards.forEach(card => {
+                const cardCat = card.getAttribute('data-category');
+                const cardName = card.getAttribute('data-name');
+
+                const matchesCat = (currentCategory === 'all' || cardCat === currentCategory);
+                const matchesSearch = (!query || cardName.includes(query));
+
+                if (matchesCat && matchesSearch) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        function filterCategory(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('.cat-pill').forEach(btn => {
+                btn.classList.remove('bg-white', 'text-black', 'border-white');
+                btn.classList.add('bg-surface', 'text-muted', 'border-border');
+            });
+            event.target.classList.remove('bg-surface', 'text-muted', 'border-border');
+            event.target.classList.add('bg-white', 'text-black', 'border-white');
+            applyFilters();
+        }
+
+        searchInput.addEventListener('input', applyFilters);
+    </script>
+</body>
+</html>
