@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Navbar } from "@/components/navbar/navbar";
+import { Footer } from "@/components/footer/footer";
 
 export const metadata: Metadata = {
-  title: "Live Directory & Client Builds — CyberSlayerCorpz",
+  title: {
+    default: "Live Directory & Client Builds | CyberSlayerCorpz",
+    template: "%s | CyberSlayerCorpz",
+  },
   description:
     "Production client platforms, bespoke storefronts, and edge systems engineered by CyberSlayerCorpz. Sub-second performance, zero bloat.",
   icons: {
@@ -29,8 +34,16 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-full flex flex-col bg-bg text-fg relative">
-        {children}
+      <body className="min-h-full flex flex-col bg-bg text-fg">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:font-medium focus:rounded-full focus:shadow-xl focus:outline-none"
+        >
+          Skip to content
+        </a>
+        <Navbar />
+        <main id="main-content" className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   );
