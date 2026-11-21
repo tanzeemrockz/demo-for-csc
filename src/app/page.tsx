@@ -17,6 +17,8 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { DitherField } from "@/components/ui/dither-field";
 import { CTASection } from "@/components/shared/cta-section";
+import { Navbar } from "@/components/navbar/navbar";
+import { Footer } from "@/components/footer/footer";
 
 type DirectoryItem = {
   id: string;
@@ -153,7 +155,9 @@ export default function DirectoryPage() {
   });
 
   return (
-    <div className="relative min-h-screen bg-bg text-fg overflow-hidden">
+    <>
+      <Navbar />
+      <div className="relative min-h-screen bg-bg text-fg overflow-hidden">
       {/* Background Ambience: Grain + Radial Glow + 3D Orbits */}
       <div aria-hidden className="absolute inset-0 pointer-events-none -z-10">
         <DitherField
@@ -346,6 +350,8 @@ export default function DirectoryPage() {
         buttonLabel="Start a project"
         buttonHref="https://cyberslayercorpz.dev/contact"
       />
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 }
