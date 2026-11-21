@@ -36,6 +36,31 @@ type DirectoryItem = {
 
 const DIRECTORY_ITEMS: DirectoryItem[] = [
   {
+    id: "ahmed-catering",
+    name: "Ahmed Catering",
+    client: "Ahmed Catering • Palavakkam & Taramani, Chennai",
+    category: "Wedding Banquets & Dum Biryani",
+    industry: "Catering & Hospitality",
+    statusBadge: "LIVE PROTOTYPE",
+    statusColor: "orange",
+    description:
+      "A high-speed wedding banquet and wood-fire dum biryani catering platform. Features interactive per-plate menu package calculators, live guest count estimators, and automated WhatsApp quote routing directly to the kitchen desk.",
+    tags: [
+      "Per-Plate Estimator",
+      "Wood-Fire Dum Biryani",
+      "1-Tap WhatsApp Quotes",
+      "Chennai Event Service",
+    ],
+    url: "/ahmed-catering",
+    domain: "demo.cyberslayercorpz.dev/ahmed-catering",
+    highlights: [
+      { icon: Zap, label: "< 0.6s TTFB" },
+      { icon: MessageCircle, label: "Live WhatsApp Routing" },
+      { icon: ShieldCheck, label: "Turnkey Setup" },
+    ],
+    keywords: "ahmed catering biryani wedding feasts banquet chennai palavakkam taramani non veg",
+  },
+  {
     id: "nizam-butterfly",
     name: "Nizam Butterfly",
     client: "Nizam Food Products • South India",
